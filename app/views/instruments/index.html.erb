@@ -1,7 +1,8 @@
 <h1> Instruments </h1>
 
 <% @instruments.each do |instrument| %>
-  <%= instrument.name %>
+  <%= link_to instrument.name, instrument_path(instrument) %>
 <% end %>
 
 <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+<%= link_to "create an instrument", new_instrument_path if policy(Instrument).new? %>
