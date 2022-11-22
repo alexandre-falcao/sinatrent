@@ -1,11 +1,3 @@
 <h1>Hello People</h1>
 
-<%= form_with model: @instrument do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :instrument_type %>
-  <%= f.text_field :instrument_type %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", instrument: @instrument %>
