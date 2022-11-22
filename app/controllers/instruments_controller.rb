@@ -9,10 +9,6 @@ class InstrumentsController < ApplicationController
   end
 
   def create
-    # @user_id = current_user.id
-    # @name = params[:instrument][:name]
-    # @instrument_type = params[:instrument][:instrument_type]
-    # @price = params[:instrument][:price]
     @instrument = Instrument.new(instrument_params)
     @instrument.user = current_user
     @instrument.save
