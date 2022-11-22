@@ -14,11 +14,4 @@ class InstrumentPolicy < ApplicationPolicy
     true
   end
 
-  def edit?
-    update?
-  end
-
-  def update?
-    record.user_id == user.id
-  end
 end
