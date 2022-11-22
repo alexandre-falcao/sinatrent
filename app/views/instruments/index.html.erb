@@ -3,3 +3,5 @@
 <% @instruments.each do |instrument| %>
   <%= instrument.name %>
 <% end %>
+
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
