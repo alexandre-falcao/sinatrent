@@ -3,5 +3,6 @@
 <div class="col-12 col-md-4">
 </div>
 <h1> <%= @instrument.name %> </h1>
+<%= cl_image_tag @instrument.photo.key, height: 300, width: 400, crop: :fill %>
 <h4> <%= @instrument.price %> </h4>
 <%= link_to "back home", instruments_path %>
