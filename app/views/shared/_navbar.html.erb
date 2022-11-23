@@ -1,4 +1,7 @@
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-4">
+      </div>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
@@ -17,7 +20,7 @@
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "avatar.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Sign in", user_session_path, class: "dropdown-item" %>
