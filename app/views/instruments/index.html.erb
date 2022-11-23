@@ -1,5 +1,6 @@
 
 <% @instruments.each do |instrument| %>
+  <%= cl_image_tag instrument.photo.key, height: 300, width: 400, crop: :fill %>
   <%= link_to instrument.name, instrument_path(instrument) %>
 <% end %>
 
