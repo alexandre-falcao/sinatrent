@@ -1,0 +1,45 @@
+.content {
+  display: flex;
+}
+
+.grid-container {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  padding: 15px;
+}
+
+.card-instrument {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.card-instrument > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-instrument h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-instrument p {
+  font-weight: bold;
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-instrument-infos {
+  padding: 0px;
+  display: grid;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+}
