@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="card-product">
-    <img src="https://api.batsss.co/uploads/medium_capa_Flauta_Tranversal_Eagle_FL_03_N_1519_c9b5ca7a04.png" />
+    <%= cl_image_tag @instrument.photo.key %>
     <div class="card-product-infos">
       <h2> <%= @instrument.name %> </h2>
       <p> R$ <%= @instrument.price %> </p>
