@@ -14,8 +14,12 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.new(instrument_params)
     @instrument.user = current_user
     authorize @instrument
-    @instrument.save
-    redirect_to root_path
+
+    if @instrument.save
+      redirect_to instrument_path(@instrument)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -26,7 +30,7 @@ class InstrumentsController < ApplicationController
   private
 
   def instrument_params
-    params.require(:instrument).permit(:name, :type, :price, :photo)
+    params.require(:instrument).permit(:name, :instrument_type, :price, :photo)
   end
 
 end
