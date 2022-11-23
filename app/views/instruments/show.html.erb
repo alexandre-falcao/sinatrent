@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-4">
 
-      <h1> <%= @instrument.name %> </h1>
-      <h4> <%= @instrument.price %> </h4>
-      <%= link_to "back home", instruments_path %>
+  <div class="card-product">
+    <img src="https://api.batsss.co/uploads/medium_capa_Flauta_Tranversal_Eagle_FL_03_N_1519_c9b5ca7a04.png" />
+    <div class="card-product-infos">
+      <h2> <%= @instrument.name %> </h2>
+      <p> R$ <%= @instrument.price %> </p>
+      <a class="btn btn-flat" href="#">Book now</a>
     </div>
   </div>
-</div>
