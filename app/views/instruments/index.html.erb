@@ -5,21 +5,18 @@
 <%# <div class="col-20 col-md-4">
 </div> %>
 
-<%= button_to "logout", destroy_user_session_path, method: :delete  %>
-<%= link_to "create an instrument", new_instrument_path if policy(Instrument).new? %>
+    <%= link_to "create an instrument", new_instrument_path if policy(Instrument).new? %>
 
+    <div class="grid-container">
 
+      <% @instruments.each do |instrument| %>
+        <div class="card-instrument">
+          <%= cl_image_tag instrument.photo.key %>
+          <div class="card-instrument-infos">
+            <h2><%= link_to instrument.name, instrument_path(instrument) %></h2>
+            <p>R$ <%= instrument.price %></p>
+          </div>
+        </div>
+      <% end %>
 
-<div class="grid-container">
-
-  <% @instruments.each do |instrument| %>
-    <div class="card-instrument">
-      <%= cl_image_tag instrument.photo.key %>
-      <div class="card-instrument-infos">
-        <h2><%= link_to instrument.name, instrument_path(instrument) %></h2>
-        <p>R$ <%= instrument.price %></p>
-      </div>
     </div>
-  <% end %>
-
-</div>

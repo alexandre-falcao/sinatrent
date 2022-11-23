@@ -1,8 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
 
-<%= simple_form_for(instrument) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :instrument_type %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+      <%= simple_form_for(instrument) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :instrument_type %>
+        <%= f.input :price %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
