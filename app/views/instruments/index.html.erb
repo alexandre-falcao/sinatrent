@@ -1,10 +1,11 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-20 col-md-4">
-    </div>
-    <% @instruments.each do |instrument| %>
-      <%= link_to instrument.name, instrument_path(instrument) %>
-    <% end %>
+<div class="row justify-content-center">
+<div class="col-20 col-md-4">
+</div>
+<% @instruments.each do |instrument| %>
+  <%= cl_image_tag instrument.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= link_to instrument.name, instrument_path(instrument) %>
+<% end %>
 
     <%= button_to "logout", destroy_user_session_path, method: :delete  %>
     <%= link_to "create an instrument", new_instrument_path if policy(Instrument).new? %>
