@@ -1,0 +1,12 @@
+<h1>Bookings#new</h1>
+<p>Find me in app/views/bookings/new.html.erb</p>
+
+
+
+
+
+<%= simple_form_for([@instrument, @booking]) do |f| %>
+  <%= f.input :start_date, as: :date, label: "Start date", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.input :return_date, as: :date, label: '&nbsp;'.html_safe, placeholder: "To", wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+<% end %>
