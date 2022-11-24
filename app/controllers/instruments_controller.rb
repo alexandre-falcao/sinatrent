@@ -27,6 +27,13 @@ class InstrumentsController < ApplicationController
     authorize @instrument
   end
 
+  def destroy
+    @instrument = Instrument.find(params[:id])
+    @instrument.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to instruments_path, status: :see_other
+  end
+
   private
 
   def instrument_params
