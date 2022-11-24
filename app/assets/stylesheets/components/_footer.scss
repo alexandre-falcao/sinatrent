@@ -1,14 +1,12 @@
 .footer {
   margin-top: O auto;
-  background: #F4F4F4;
+  background: #ffcdb4;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
+  height: 70px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  width: 100%, !important;
-
 }
 .footer-links {
   display: flex;
@@ -16,7 +14,7 @@
 }
 .footer-links a {
   color: black;
-  opacity: 0.15;
+  opacity: 0.50;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
