@@ -5,10 +5,14 @@
     <div class="card-product-infos">
       <h2> <%= @instrument.name %> </h2>
       <p> R$ <%= @instrument.price %> </p>
+
       <%= link_to "Book now", new_instrument_booking_path(@instrument), class: "btn btn-flat" %>
       <% if policy(@instrument).edit? %>
         <%= link_to "Edit", edit_instrument_path(@instrument), class: "btn btn-flat" %>
       <% end %>
-      <%= link_to "Delete", instrument_path(@instrument), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-flat" %>
+
+      <%= link_to "Delete",instrument_path(@instrument),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@instrument).destroy?
+      %>
     </div>
   </div>

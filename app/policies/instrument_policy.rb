@@ -22,4 +22,9 @@ class InstrumentPolicy < ApplicationPolicy
     edit?
   end
 
+
+  def destroy?
+    record.user == user
+  end
+
 end
