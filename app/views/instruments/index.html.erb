@@ -8,14 +8,19 @@
   </div>
 </div>
 
-<div class="container">
-</div>
-        <% @instruments.each do |instrument| %>
-          <div class="card-instrument">
-            <%= cl_image_tag instrument.photo.key %>
-            <div class="card-instrument-infos">
-              <h2><%= link_to instrument.name, instrument_path(instrument) %></h2>
-              <p>R$ <%= instrument.price %></p>
-                <% end %>
-</div>
+<div class="container my-3">
+  <div class="row justify-content-center">
+    <% @instruments.each do |instrument| %>
+      <div class="col-3">
+        <div class="card-instrument">
+          <%= cl_image_tag instrument.photo.key %>
+          <div class="card-instrument-infos">
+            <h2><%= link_to instrument.name, instrument_path(instrument) %></h2>
+            <p>R$ <%= instrument.price %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
 </div>

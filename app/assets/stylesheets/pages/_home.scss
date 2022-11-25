@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
-.test {
-color:blue
-}
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  }
