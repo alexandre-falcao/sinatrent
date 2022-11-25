@@ -14,4 +14,12 @@ class InstrumentPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    edit?
+  end
+
 end
