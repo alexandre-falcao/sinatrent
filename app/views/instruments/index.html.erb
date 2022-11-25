@@ -1,22 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=asset_url('instruments.jpeg')%>);">
+  <div class="container">
+    <h1><strong>Rent</strong> yout instrument with Sinatrent</strong>!</h1>
+      <p>Thousands of people are renting an instrument, be the next one !</p>
+
+           <%= link_to "Create an instrument", new_instrument_path, class: "btn-flat" if policy(Instrument).new? %></a>
+
+  </div>
+</div>
+
 <div class="container">
-<div class="row justify-content-center">
-
-<%# I think we don't need this line %>
-<%# <div class="col-20 col-md-4">
-</div> %>
-
-    <%= link_to "create an instrument", new_instrument_path if policy(Instrument).new? %>
-
-    <div class="grid-container">
-
-      <% @instruments.each do |instrument| %>
-        <div class="card-instrument">
-          <%= cl_image_tag instrument.photo.key %>
-          <div class="card-instrument-infos">
-            <h2><%= link_to instrument.name, instrument_path(instrument) %></h2>
-            <p>R$ <%= instrument.price %></p>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
+</div>
+        <% @instruments.each do |instrument| %>
+          <div class="card-instrument">
+            <%= cl_image_tag instrument.photo.key %>
+            <div class="card-instrument-infos">
+              <h2><%= link_to instrument.name, instrument_path(instrument) %></h2>
+              <p>R$ <%= instrument.price %></p>
+                <% end %>
+</div>
+</div>
