@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "instruments#index"
 
-  resources :instruments, only: [:new, :create, :index, :show, :destroy] do
+
+  resources :instruments do
     resources :bookings, only: [:new, :create]
   end
 

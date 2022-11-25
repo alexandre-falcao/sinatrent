@@ -35,6 +35,18 @@ class InstrumentsController < ApplicationController
     redirect_to instruments_path, status: :see_other
   end
 
+  def edit
+    @instrument = Instrument.find(params[:id])
+    authorize @instrument
+  end
+
+  def update
+    @instrument = Instrument.find(params[:id])
+    authorize @instrument
+    @instrument.update(instrument_params)
+    redirect_to instrument_path(@instrument)
+  end
+
   private
 
   def instrument_params
