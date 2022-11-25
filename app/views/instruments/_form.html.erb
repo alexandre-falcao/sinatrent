@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
 
+    <div class="form-login">
       <%= simple_form_for(instrument) do |f| %>
         <%= f.input :name %>
         <%= f.input :instrument_type %>
@@ -8,6 +9,8 @@
         <%= f.input :photo, as: :file %>
         <%= f.submit %>
       <% end %>
+      </div>
+
     </div>
   </div>
 </div>

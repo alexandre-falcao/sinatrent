@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-md-4">
-      <h2>Resend confirmation instructions</h2>
 
+    <div class="form-login">
+      <h2>Resend confirmation instructions</h2>
       <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
         <%= f.full_error :confirmation_token %>
@@ -11,6 +12,7 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true,
+                      placeholder: "mail@gmail.com",
                       value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
                       input_html: { autocomplete: "email" } %>
         </div>
@@ -21,6 +23,8 @@
       <% end %>
 
       <%= render "devise/shared/links" %>
+      </div>
+
     </div>
   </div>
 </div>
