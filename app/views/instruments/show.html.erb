@@ -7,9 +7,8 @@
       <p> R$ <%= @instrument.price %> </p>
       <a class="btn btn-flat" href="#">Book now</a>
 
-      <%= link_to "Delete",
-      instrument_path(@instrument),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      <%= link_to "Delete",instrument_path(@instrument),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@instrument).destroy?
       %>
     </div>
   </div>
