@@ -4,7 +4,8 @@
     <div class="form-login">
       <%= simple_form_for(instrument) do |f| %>
         <%= f.input :name %>
-        <%= f.input :instrument_type %>
+        <%= f.association :category %>
+        <%= f.input :description %>
         <%= f.input :price %>
         <%= f.input :photo, as: :file %>
         <%= f.submit %>
