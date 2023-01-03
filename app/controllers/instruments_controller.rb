@@ -12,7 +12,7 @@ class InstrumentsController < ApplicationController
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: 'list.html', locals: { instruments: @instruments } }
+      format.text { render partial: 'list', locals: { instruments: @instruments }, formats: [:html] }
     end
   end
 
