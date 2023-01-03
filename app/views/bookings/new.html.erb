@@ -1,27 +1,48 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-4">
+    <div class="col-12 col-sm-6 col-md-8">
 
-      <div data-controller="price">
+      <div class="form-login">
+        <h2>Bookings</h2>
+        <h3><%= @instrument.name %></h3>
+        <h3>Price: $ <span id='price'><%= @instrument.price %></span></h3>
 
-        <div class="form-login">
-          <h2>Bookings</h2>
-
-          <%= simple_form_for([@instrument, @booking]) do |f| %>
-            <div data-controller="price">
-              <%= f.input :start_date, as: :date, label: "Start date", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" }
-              input_html: { data: { target: "price.start" } }%>
-
-              <%= f.input :return_date, as: :date, label: '&nbsp;'.html_safe, placeholder: "To", wrapper_html: { class: "inline_field_wrapper" }
-              input_html: { data: { target: "price.return" } }%>
-              <%= f.submit "book now", class: "btn btn-flat btn-lg btn-block btn-booking" %>
-            </div>
-          <% end %>
-        </div>
-
-
-      </div>
+        <%= simple_form_for [@instrument, @booking] do |f| %>
+          <%= f.input :start_date, as: :date,
+                html5: true %>
+          <%= f.input :return_date, as: :date,
+                html5: true %>
+          <%= f.submit "Book now", class: "btn btn-flat btn-lg btn-block btn-booking" %>
+        <% end %>
 
     </div>
+
+    <div class="d-flex justify-content-between mt-3">
+      <h3 class='pb-1'>Total: $ <span id='value'></span></h3>
+      <button onclick="calc()" class='btn btn-outline-success mb-2'>Calculate</button>
+    </div>
+
   </div>
 </div>
+
+
+
+
+<script type="text/javascript">
+  function totalDays()
+  {
+    var dropdt = document.getElementById("booking_return_date").valueAsDate;
+    var pickdt = document.getElementById("booking_start_date").valueAsDate;
+    return parseInt((dropdt - pickdt) / (24 * 3600 * 1000));
+  }
+
+  function calc()
+{
+  if (totalDays() > 0) {
+    document.getElementById('value').innerHTML=totalDays()*parseInt(document.getElementById('price').innerHTML);
+  }else {
+    document.getElementById('value').innerHTML="";
+  }
+
+}
+</script>
