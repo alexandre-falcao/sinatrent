@@ -3,6 +3,17 @@ class InstrumentsController < ApplicationController
 
   def index
     @instruments = policy_scope(Instrument)
+
+    @instruments = Instrument.order(created_at: :asc)
+
+    if params[:query].present?
+      @instruments = @instruments.where('name ILIKE ?', "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'list.html', locals: { instruments: @instruments } }
+    end
   end
 
   def new

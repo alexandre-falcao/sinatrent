@@ -2,15 +2,26 @@
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4">
 
-      <div class="form-login">
-        <h2>Bookings</h2>
+      <div data-controller="price">
 
-        <%= simple_form_for([@instrument, @booking]) do |f| %>
-          <%= f.input :start_date, as: :date, label: "Start date", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+        <div class="form-login">
+          <h2>Bookings</h2>
 
-          <%= f.input :return_date, as: :date, label: '&nbsp;'.html_safe, placeholder: "To", wrapper_html: { class: "inline_field_wrapper" } %>
-          <%= f.submit "book now", class: "btn btn-flat btn-lg btn-block btn-booking" %>
-        <% end %>
+          <%= simple_form_for([@instrument, @booking]) do |f| %>
+            <div data-controller="price">
+              <%= f.input :start_date, as: :date, label: "Start date", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" }
+              input_html: { data: { target: "price.start" } }%>
+
+              <%= f.input :return_date, as: :date, label: '&nbsp;'.html_safe, placeholder: "To", wrapper_html: { class: "inline_field_wrapper" }
+              input_html: { data: { target: "price.return" } }%>
+              <%= f.submit "book now", class: "btn btn-flat btn-lg btn-block btn-booking" %>
+            </div>
+          <% end %>
+        </div>
+
+
+      </div>
+
     </div>
   </div>
 </div>
