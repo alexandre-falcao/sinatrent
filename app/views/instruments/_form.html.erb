@@ -5,6 +5,7 @@
       <%= simple_form_for(instrument) do |f| %>
         <%= f.input :name %>
         <%= f.association :category %>
+        <%= f.input :address %>
         <%= f.input :description %>
         <%= f.input :price %>
         <%= f.input :photo, as: :file %>

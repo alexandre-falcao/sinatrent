@@ -53,7 +53,8 @@ instrument = Instrument.new(name: "Violão acústico Yamaha C40M - Nylon",
   description: "Violão em excelente estado, um dos mais vendidos e recomendados para iniciantes. com som limpo suave das cordas de nylon e bom para cantar junto.",
   category_id: string_instruments.id,
   user_id: alexandre.id,
-  price: 10)
+  price: 10,
+  address: "Rua Prudente de Morais 938, Ipanema, Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "guitar.png", content_type: "image/png")
 instrument.save
 
@@ -62,7 +63,8 @@ instrument = Instrument.new(name: "Saxofone Alto para estudantes - Weril Spectra
   description: "É um Saxofone da marca Weril, Saxofone Alto, modelo Spectra A391 Estudante, excelente para quem está aprendendo e evoluindo no instrumento.",
   category_id: wind_instruments.id,
   user_id: alexandre.id,
-  price: 10)
+  price: 10,
+  address: "Rua Prudente de Morais 938, Ipanema, Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "sax.png", content_type: "image/png")
 instrument.save
 
@@ -71,7 +73,8 @@ instrument = Instrument.new(name: "Violão acústico Tagima 12 cordas TJ212 - A�
   description: "Consagrado pelo gênero Folk e Blues, o violão de 12 cordas possui as 6 cordas tradicionais do violão, porém cada uma está duplicada.",
   category_id: string_instruments.id,
   user_id: matheus.id,
-  price: 10)
+  price: 10,
+  address: "412 Avenida Vieira Souto, Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "guitar.png", content_type: "image/png")
 instrument.save
 
@@ -80,7 +83,8 @@ instrument = Instrument.new(name: "Violino Eagle 431 - Modelo 3/4",
   description: "Violino da renomada e conhecida marca Eagle, é a principal opção para instrumento de entrada e intermediários. O modelo 431 é uma ótima opção para anos de prática.",
   category_id: string_instruments.id,
   user_id: matheus.id,
-  price: 10)
+  price: 10,
+  address: "412 Avenida Vieira Souto, Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "violin.png", content_type: "image/png")
 instrument.save
 
@@ -89,7 +93,8 @@ instrument = Instrument.new(name: "Bateria Acústica Pearl Rhythm Traveler Drum 
   description: "Ideal para estudo, viagens e apresentações pequenas em espaços pequenos. Preservando sonoridade e durabilidade, essa bateria não deixa a desejar",
   category_id: drums.id,
   user_id: matheus.id,
-  price: 10)
+  price: 10,
+  address: "412 Avenida Vieira Souto, Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "drum.png", content_type: "image/png")
 instrument.save
 

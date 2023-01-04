@@ -14,6 +14,15 @@ class InstrumentsController < ApplicationController
       format.html # Follow regular flow of Rails
       format.text { render partial: 'list', locals: { instruments: @instruments }, formats: [:html] }
     end
+
+    @markers = @instruments.geocoded.map do |instrument|
+      {
+        lat: instrument.latitude,
+        lng: instrument.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {instrument: instrument})
+      }
+    end
+
   end
 
   def new
