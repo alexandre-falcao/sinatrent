@@ -54,7 +54,11 @@ instrument = Instrument.new(name: "Violão acústico Yamaha C40M - Nylon",
   category_id: string_instruments.id,
   user_id: alexandre.id,
   price: 10,
-  address: "Rua Prudente de Morais 938, Ipanema, Rio de Janeiro")
+  street: "Rua Prudente de Morais",
+  number:"938",
+  district:"Ipanema",
+  city:"Rio de Janeiro",
+  state:"Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "guitar.png", content_type: "image/png")
 instrument.save
 
@@ -64,7 +68,11 @@ instrument = Instrument.new(name: "Saxofone Alto para estudantes - Weril Spectra
   category_id: wind_instruments.id,
   user_id: alexandre.id,
   price: 10,
-  address: "Rua Prudente de Morais 938, Ipanema, Rio de Janeiro")
+  street: "Rua Prudente de Morais",
+  number:"938",
+  district:"Ipanema",
+  city:"Rio de Janeiro",
+  state:"Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "sax.png", content_type: "image/png")
 instrument.save
 
@@ -74,7 +82,11 @@ instrument = Instrument.new(name: "Violão acústico Tagima 12 cordas TJ212 - A�
   category_id: string_instruments.id,
   user_id: matheus.id,
   price: 10,
-  address: "412 Avenida Vieira Souto, Rio de Janeiro")
+  street: "Avenida Vieira Souto",
+  number:"412",
+  district:"Ipanema",
+  city:"Rio de Janeiro",
+  state:"Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "guitar.png", content_type: "image/png")
 instrument.save
 
@@ -84,7 +96,11 @@ instrument = Instrument.new(name: "Violino Eagle 431 - Modelo 3/4",
   category_id: string_instruments.id,
   user_id: matheus.id,
   price: 10,
-  address: "412 Avenida Vieira Souto, Rio de Janeiro")
+  street: "Avenida Vieira Souto",
+  number:"412",
+  district:"Ipanema",
+  city:"Rio de Janeiro",
+  state:"Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "violin.png", content_type: "image/png")
 instrument.save
 
@@ -92,10 +108,14 @@ file = URI.open("https://img.freepik.com/premium-psd/isometric-drum-kit_28315-32
 instrument = Instrument.new(name: "Bateria Acústica Pearl Rhythm Traveler Drum Set",
   description: "Ideal para estudo, viagens e apresentações pequenas em espaços pequenos. Preservando sonoridade e durabilidade, essa bateria não deixa a desejar",
   category_id: drums.id,
-  user_id: matheus.id,
+  user_id: alexandre.id,
   price: 10,
-  address: "412 Avenida Vieira Souto, Rio de Janeiro")
+  street: "Rua César Lattes",
+  number:"1000",
+  district:"Barra da Tijuca",
+  city:"Rio de Janeiro",
+  state:"Rio de Janeiro")
 instrument.photo.attach(io: file, filename: "drum.png", content_type: "image/png")
 instrument.save
 
-puts "Created all users, categories and isntruments"
+puts "Created all users, categories and instruments"
