@@ -19,7 +19,8 @@ class InstrumentsController < ApplicationController
       {
         lat: instrument.latitude,
         lng: instrument.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {instrument: instrument})
+        # info_window: render_to_string(partial: "info_window", locals: {instrument: instrument})
+        info_window: render_to_string(partial: "info_window", :formats => [:html], locals: {instrument: instrument})
       }
     end
 
@@ -70,7 +71,7 @@ class InstrumentsController < ApplicationController
   private
 
   def instrument_params
-    params.require(:instrument).permit(:name, :description, :category_id, :price, :photo)
+    params.require(:instrument).permit(:name, :description, :street, :number, :district, :city, :state, :category_id, :price, :photo)
   end
 
 end
