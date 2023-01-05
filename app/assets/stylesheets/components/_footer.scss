@@ -27,3 +27,45 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+
+/* large devices */
+
+@media screen and (max-width: 992px){
+
+  .footer {
+    padding: 0px 40px;
+  }
+
+  .footer-links a {
+    font-size: 18px;
+    padding: 0px 8px;
+  }
+
+  .footer-copyright{
+    font-size: 10px;
+  }
+}
+
+/* medium devices */
+
+@media screen and (max-width: 768px){
+  .footer {
+    padding: 0px 35px;
+  }
+
+  .footer-links a {
+    font-size: 16px;
+    padding: 0px 7px;
+  }
+}
+
+@media screen and (max-width: 576px){
+
+}
+
+/* small devices */
+
+@media screen and (max-width: 350px){
+
+}
