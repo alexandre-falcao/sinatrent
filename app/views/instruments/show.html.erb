@@ -8,9 +8,8 @@
       <p> R$ <%= @instrument.price %> </p>
 
 
-      <% unless @instrument.user_id == current_user.id %>
-        <%= link_to "Book now", new_instrument_booking_path(@instrument), class: "btn btn-flat" %>
-      <% end %>
+      <%= link_to "Book now", new_instrument_booking_path(@instrument), class: "btn btn-flat" %>
+
       <% if policy(@instrument).edit? %>
         <%= link_to "Edit", edit_instrument_path(@instrument), class: "btn btn-warning mt-2" %>
       <% end %>
