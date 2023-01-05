@@ -49,16 +49,16 @@
   justify-content: center;
   overflow: hidden;
   height: 300px;
-  background-color: antiquewhite;
   display: flex;
   align-items: center;
   margin: 0px;
 }
 
 .card-product img {
-  height: 100%;
-  width: 50%;
+  height: 300px;
+  width: 320px;
   object-fit: cover;
+  margin-right: 5rem;
 }
 
 .card-product h2 {
@@ -83,6 +83,10 @@
 @media screen and (max-width: 992px){
   .card-product {
     height: 400px;
+  }
+
+  .card-product img {
+    margin-right: 0;
   }
 }
 
