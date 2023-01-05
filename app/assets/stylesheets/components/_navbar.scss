@@ -15,3 +15,27 @@
   font-family: 'Times New Roman', Times, serif;
 
 }
+
+
+
+@media screen and (max-width: 992px){
+
+}
+
+/* medium devices */
+
+@media screen and (max-width: 768px){
+  .navbar-lewagon .navbar-brand img {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 576px){
+
+}
+
+/* small devices */
+
+@media screen and (max-width: 350px){
+
+}
