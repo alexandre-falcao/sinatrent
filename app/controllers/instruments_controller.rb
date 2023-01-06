@@ -15,15 +15,6 @@ class InstrumentsController < ApplicationController
       format.text { render partial: 'list', locals: { instruments: @instruments }, formats: [:html] }
     end
 
-    @markers = @instruments.geocoded.map do |instrument|
-      {
-        lat: instrument.latitude,
-        lng: instrument.longitude,
-        # info_window: render_to_string(partial: "info_window", locals: {instrument: instrument})
-        info_window: render_to_string(partial: "info_window", :formats => [:html], locals: {instrument: instrument})
-      }
-    end
-
   end
 
   def new
@@ -46,6 +37,14 @@ class InstrumentsController < ApplicationController
   def show
     @instrument = Instrument.find(params[:id])
     authorize @instrument
+
+    @markers =
+      {
+        lat: @instrument.latitude,
+        lng: @instrument.longitude,
+        # info_window: render_to_string(partial: "info_window", locals: {instrument: instrument})
+        info_window: render_to_string(partial: "info_window", :formats => [:html], locals: {instrument: @instrument})
+      }
   end
 
   def destroy
