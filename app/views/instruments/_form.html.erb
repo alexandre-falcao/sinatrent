@@ -1,21 +1,79 @@
-<div class="container">
-  <div class="row justify-content-center">
 
-    <div class="form-login">
-      <%= simple_form_for(instrument) do |f| %>
-        <%= f.input :name %>
-        <%= f.association :category %>
-        <%= f.input :street %>
-        <%= f.input :number %>
-        <%= f.input :district %>
-        <%= f.input :city %>
-        <%= f.input :state %>
+<div class="container">
+
+  <%= simple_form_for(instrument) do |f| %>
+
+    <div class="form-instrument">
+
+      <div class="row justify-text-center">
+        <h2> Rent your instrument </h2>
+      </div>
+
+      <div class="row justify-text-center">
+        <h3> 📝 Instrument Specs </h3>
+      </div>
+
+      <div class="row">
+
+        <div class="col-12 col-lg-8">
+         <%= f.input :name, hint: "Suggestion: Instrument, Brand, Model and Year", placeholder: "e.g. Electric Guitar Fender Johnny Marr Signature Jaguar 2021" %>
+        </div>
+
+        <div class="col-12 col-lg-2">
+         <%= f.association :category %>
+        </div>
+
+        <div class="col-12 col-lg-2">
+         <%= f.input :price,  label: "Price per day" %>
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center">
         <%= f.input :description %>
-        <%= f.input :price %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit %>
-      <% end %>
+      </div>
+
+      <div class="row justify-content-center">
+        <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo here' %>
+      </div>
+
+      <div class="row justify-text-center">
+        <h3> 🚩 Location </h3>
+      </div>
+
+      <div class="row">
+
+        <div class="col-12 col-lg-11">
+         <%= f.input :street %>
+        </div>
+
+        <div class="col-12 col-lg-1">
+         <%= f.input :number %>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-12 col-lg-4">
+         <%= f.input :district %>
+        </div>
+
+        <div class="col-12 col-lg-4">
+         <%= f.input :city %>
+        </div>
+
+        <div class="col-12 col-lg-4">
+         <%= f.input :state %>
+        </div>
+
+      </div>
+
+      <%= f.button :submit, "Rent your instrument", class: "btn btn-primary" %>
+
     </div>
 
-  </div>
+  <% end %>
+
 </div>
