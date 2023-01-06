@@ -66,13 +66,22 @@
   margin-bottom: 2rem;
 }
 
-.card-product p {
+.card-product .price {
   font-weight: bold;
   font-size: 20px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 2rem;
   margin-top: 8px;
+}
+
+.address{
+  font-weight: lighter;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .5;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .card-product .card-product-infos {
