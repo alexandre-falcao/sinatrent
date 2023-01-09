@@ -7,7 +7,7 @@
             <%= cl_image_tag instrument.photo.key %>
             <div class="card-instrument-infos">
               <h2><%= link_to instrument.name, instrument_path(instrument) %></h2>
-              <p>R$ <%= instrument.price %></p>
+              <p> <%= number_to_currency(instrument.price) %> </p>
             </div>
           </div>
         </div>

@@ -14,4 +14,14 @@ class Instrument < ApplicationRecord
     [street, number, district, city, state].compact.join(', ')
   end
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+  against: [ :name, :district, :city ],
+  associated_against: {
+    instrument: [ :name ]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
+
 end
