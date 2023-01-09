@@ -7,7 +7,15 @@ class InstrumentsController < ApplicationController
     @instruments = Instrument.order(created_at: :asc)
 
     if params[:query].present?
-      @instruments = @instruments.where('name ILIKE ?', "%#{params[:query]}%")
+      sql_query = <<~SQL
+        instruments.name ILIKE :query
+        OR instruments.district ILIKE :query
+        OR instruments.city ILIKE :query
+        OR categories.name ILIKE :query
+      SQL
+      @instruments = Instrument.joins(:category).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @instruments = Instrument.all
     end
 
     respond_to do |format|

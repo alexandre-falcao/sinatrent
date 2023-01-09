@@ -1,9 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=asset_url('instruments.jpg')%>);">
   <div class="container">
-    <h1><strong>Rent</strong> yout instrument with Sinatrent</strong>!</h1>
-      <p>Thousands of people are renting an instrument, be the next one !</p>
+    <h1><strong>Rent</strong> your instrument with Sinatrent</strong>!</h1>
+      <p>Thousands of people are renting an instrument, be the next one!</p>
 
-           <%= link_to "Create an instrument", new_instrument_path, class: "btn-flat" if policy(Instrument).new? %></a>
+           <%= link_to "Rent your instrument", new_instrument_path, class: "btn-flat" if policy(Instrument).new? %></a>
 
   </div>
 </div>
@@ -14,7 +14,7 @@
     <%= form_with url: instruments_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
       <%= f.text_field :query,
                       class: "form-control",
-                      placeholder: 'Type a instrument name',
+                      placeholder: 'Search instruments by name, type, district or city',
                       value: params[:query],
                       data: {
                         refresh_list_target: 'searchInput',
